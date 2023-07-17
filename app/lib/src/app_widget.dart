@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'home/home_page.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+//
 import 'shered/themes/themes.dart';
 
 class AppWidget extends StatelessWidget {
@@ -8,13 +9,14 @@ class AppWidget extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Sec GFQ',
+    return MaterialApp.router(
+      title: 'Secretaria',
       debugShowCheckedModeBanner: false,
       //themeMode: ThemeMode.light,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const HomePage(),
+      routerDelegate: Modular.routerDelegate,
+      routeInformationParser: Modular.routeInformationParser,
     );
   }
 }

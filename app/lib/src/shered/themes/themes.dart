@@ -12,6 +12,7 @@ ThemeData get lightTheme => ThemeData(
         backgroundColor: _lightColorScheme.primary,
         foregroundColor: Colors.white,
       ),
+      segmentedButtonTheme: _segmentedButtonThemeData,
     );
 ThemeData get darkTheme => ThemeData(
       useMaterial3: true,
@@ -19,5 +20,18 @@ ThemeData get darkTheme => ThemeData(
       appBarTheme: AppBarTheme(
         centerTitle: true,
         backgroundColor: _darkColorScheme.primaryContainer,
+      ),
+      segmentedButtonTheme: _segmentedButtonThemeData,
+    );
+
+SegmentedButtonThemeData get _segmentedButtonThemeData =>
+    SegmentedButtonThemeData(
+      style: ButtonStyle(
+        textStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
+          if (states.contains(MaterialState.selected)) {
+            return const TextStyle(fontSize: 10);
+          }
+          return const TextStyle(fontSize: 12);
+        }),
       ),
     );
