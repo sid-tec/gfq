@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:secretaria/src/shered/widgets/user_image_button.dart';
 
+import 'widgets/contatos_card.dart';
 import 'widgets/custom_navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,22 +25,20 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      floatingActionButton: const EditFloatingActionButton(),
+      //floatingActionButton: const EditFloatingActionButton(),
       body: const Center(
         child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(8),
-              child: OptionsSegmentedButton(),
-            ),
-          ],
+          children: [ContatosCard()],
         ),
       ),
     );
   }
 }
 
-class EditFloatingActionButton extends StatelessWidget {
+
+
+
+/* class EditFloatingActionButton extends StatelessWidget {
   const EditFloatingActionButton({super.key});
 
   @override
@@ -47,28 +46,10 @@ class EditFloatingActionButton extends StatelessWidget {
     return FloatingActionButton.extended(
       onPressed: () {
         Navigator.of(context).pop();
-        Navigator.of(context).pushNamed('/edit');
+        Navigator.of(context).pushNamed('/home/edit');
       },
       icon: const Icon(Icons.edit),
       label: const Text('Novo'),
     );
   }
-}
-
-class OptionsSegmentedButton extends StatelessWidget {
-  const OptionsSegmentedButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SegmentedButton<int>(
-      segments: const [
-        ButtonSegment(value: 0, label: Text('Todos')),
-        ButtonSegment(value: 1, label: Text('Professores')),
-        ButtonSegment(value: 2, label: Text('Tecnicos')),
-        ButtonSegment(value: 3, label: Text('Orgãos')),
-      ],
-      selected: const {1},
-      onSelectionChanged: (values) {},
-    );
-  }
-}
+} */
