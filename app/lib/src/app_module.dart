@@ -1,17 +1,17 @@
 import 'package:flutter_modular/flutter_modular.dart';
 //
-import 'config/config_page.dart';
 import 'contatos/contatos_module.dart';
-import 'home/home_module.dart';
-import 'sinc/sinc_page.dart';
+import 'inicio/inicio_module.dart';
 
 class AppModule extends Module {
   @override
+  // TODO: implement binds
+  List<Bind<Object>> get binds => InicioModule().binds;
+
+  @override
 // TODO: implement routes
   List<ModularRoute> get routes => [
-        ModuleRoute('/home', module: HomeModule()),
+        ModuleRoute('/inicio', module: InicioModule()),
         ModuleRoute('/contatos', module: ContatosModule()),
-        ChildRoute('/config', child: (context, args) => const ConfigPage()),
-        ChildRoute('/sinc', child: (context, args) => const SincPage()),
       ];
 }
