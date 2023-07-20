@@ -1,5 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:realm/realm.dart';
+import 'package:secretaria/src/inicio/services/config_service.dart';
 //
+import '../shered/services/realm/realm_config.dart';
 import 'pages/config_page.dart';
 import 'pages/inicio_page.dart';
 import 'pages/sinc_page.dart';
@@ -11,6 +14,9 @@ class InicioModule extends Module {
   List<Bind<Object>> get binds => [
         Bind.singleton((i) => InicioStore()),
         //AutoBind.singleton(InicioStore.new),
+        Bind.instance<Realm>(Realm(realmConfig)),
+        Bind.factory<ConfigServiceInterface>(ConfigService.new)),
+
       ];
 
   @override
