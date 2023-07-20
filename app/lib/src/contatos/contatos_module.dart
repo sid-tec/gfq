@@ -5,7 +5,7 @@ import 'detalhes_page.dart';
 
 class ContatosModule extends Module {
   @override
-  // TODO: implement routes
+  // TODO(sid-tec): implement routes
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => const ContatosPage()),
         ChildRoute('/detalhes', child: (context, args) => const DetalhesPage()),

@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
 
+import '../services/config_service.dart';
+
 class InicioStore {
   //
   final themeMode = ValueNotifier(ThemeMode.dark);
   final syncDate = ValueNotifier<DateTime?>(null);
 
-  InicioStore();
+  InicioStore(this._configurationService) {
+    init();
+  }
+
+  final ConfigServiceInterface _configurationService;
 
   //
   void init() {
-    //TODO: Salvar os dados na base local
+    final model = _configurationService.getConfig();
+    syncDate.value = model.syncDate;
+    themeMode.value = _getThemeModeByName(model.themeModeName);
   }
 
   //
   void save() {
-    //TODO: Salvar os dados na base local
+    _configurationService.saveConfig(
+      themeMode.value.name,
+      syncDate.value,
+    );
   }
 
   //
@@ -30,4 +41,11 @@ class InicioStore {
     syncDate.value = date;
     save();
   }
+
+  void deleteApp() {
+    _configurationService.deleteAll();
+  }
+
+  ThemeMode _getThemeModeByName(String name) =>
+      ThemeMode.values.firstWhere((mode) => mode.name == name);
 }

@@ -5,11 +5,11 @@ import 'inicio/inicio_module.dart';
 
 class AppModule extends Module {
   @override
-  // TODO: implement binds
+  // TODO(sid-tec): implement binds
   List<Bind<Object>> get binds => InicioModule().binds;
 
   @override
-// TODO: implement routes
+// TODO(sid-tec): implement routes
   List<ModularRoute> get routes => [
         ModuleRoute('/inicio', module: InicioModule()),
         ModuleRoute('/contatos', module: ContatosModule()),

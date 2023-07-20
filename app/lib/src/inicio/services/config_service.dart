@@ -1,6 +1,6 @@
 import 'package:realm/realm.dart';
 
-import '../../shered/services/realm/models/config_model.dart';
+import '../../shared/services/realm/models/config_model.dart';
 
 abstract class ConfigServiceInterface {
   ConfigModel getConfig();

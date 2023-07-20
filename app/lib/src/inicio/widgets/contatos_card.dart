@@ -11,7 +11,7 @@ class ContatosCard extends StatelessWidget {
         splashColor: Colors.blue.withAlpha(30),
         onTap: () {
           //debugPrint('Card tapped.');
-          //TODO: Investigar se é necessário usar esse pop()
+          // TODO(sid-tec): Investigar se é necessário usar esse pop()
           //Navigator.of(context).pop();
           Navigator.of(context).pushNamed('/contatos/');
         },

@@ -57,7 +57,7 @@ class _ConfigPageState extends State<ConfigPage> {
             ),
             const SizedBox(height: 10),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: inicioStore.deleteApp,
               child: const Text('Limpar Cache e Reiniciar'),
             ),
           ],

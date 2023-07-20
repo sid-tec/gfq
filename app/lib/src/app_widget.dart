@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 //
 import 'inicio/stores/inicio_store.dart';
-import 'shered/themes/themes.dart';
+import 'shared/themes/themes.dart';
 
-//TODO: mover app title para arquivo de config JSON
+// TODO(sid-tec): move to JASON config file
 const _appTitle = 'Secretaria';
-//TODO: mover initial route para arquivo de config JSON
 const _initRoute = '/inicio/';
 
 class AppWidget extends StatelessWidget {

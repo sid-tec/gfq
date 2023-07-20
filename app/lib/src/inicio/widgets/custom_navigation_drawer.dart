@@ -24,14 +24,14 @@ class CustomNavigationDrawer extends StatelessWidget {
       onDestinationSelected: (value) {
         switch (value) {
           case 0:
-            //TODO: Investigate .pop()
+            // TODO(sid-tec): Investigate .pop()
             Navigator.of(context).pop();
-            Navigator.of(context).pushNamed('./sinc');
+            Navigator.of(context).pushNamed('./sincronizar');
             break;
           case 1:
-            //TODO: Investigate .pop()
+            // TODO(sid-tec): Investigate .pop()
             Navigator.of(context).pop();
-            Navigator.of(context).pushNamed('./config');
+            Navigator.of(context).pushNamed('./configuracao');
             break;
           default:
         }
@@ -50,7 +50,7 @@ class CustomNavigationDrawer extends StatelessWidget {
             width: 210,
             child: Row(
               children: [
-                const Text('Sincron.'),
+                const Text('Sincronizado'),
                 const Spacer(),
                 Text(
                   syncDateText,

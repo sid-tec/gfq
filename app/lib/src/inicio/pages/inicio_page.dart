@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:secretaria/src/shered/widgets/user_image_button.dart';
+import 'package:secretaria/src/shared/widgets/user_image_button.dart';
 
 import '../widgets/contatos_card.dart';
 import '../widgets/custom_navigation_drawer.dart';
